@@ -29,3 +29,11 @@ b64e () {
 ```bash
 alias cls='printf "\033c"'
 ```
+
+# Recursive sed
+
+Basically replaces `to` to `from` in every file in every subdirectory
+
+```
+grep -rl from . | xargs sed -i 's/from/to/g'
+```
