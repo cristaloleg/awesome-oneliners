@@ -29,3 +29,11 @@ b64e () {
 ```bash
 alias cls='printf "\033c"'
 ```
+
+# Remove merged branches relative to the selected branch 
+
+```bash
+grmb () {
+  git branch -r --merged $1 | sed 's/ *origin\///' | grep -v "$1$" | xargs -r git branch -d
+}
+```
