@@ -37,3 +37,11 @@ grmb () {
   git branch -r --merged $1 | sed 's/ *origin\///' | grep -v "$1$" | xargs -r git branch -d
 }
 ```
+
+# Resolve conflict after merge or rebase into vim
+
+if you prefer vim then you can resolve conflicts with [fugitive](https://github.com/tpope/vim-fugitive)
+
+```bash
+alias virc="git diff --name-only --relative -z --diff-filter=U | xargs -0 nvim -f -c 'tab all' -c 'tabd Gvdiff!'"
+```
