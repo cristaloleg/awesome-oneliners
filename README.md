@@ -30,6 +30,14 @@ b64e () {
 alias cls='printf "\033c"'
 ```
 
+# Search & Replace
+
+Basically replaces 1st arg to 2nd arg in every file in every subdirectory
+
+```bash
+snr() { grep -rl $1 . | xargs sed -i "s/${1}/${2}/g" }
+```
+
 # Remove merged branches relative to the selected branch 
 
 ```bash
