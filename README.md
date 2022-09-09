@@ -62,3 +62,11 @@ git_graph () {
 	  --pretty=format:'%Cred%h %Creset%<|(100,trunc)%s %C(bold blue)<%an>%Creset %Cgreen(%cd)%Creset%C(auto)%d'
 }
 ```
+
+# Verify internet connectivity
+
+```bash
+vic () {
+  ping google.com || while [[ $? != 0 ]] ; do ping google.com; done
+}
+```
